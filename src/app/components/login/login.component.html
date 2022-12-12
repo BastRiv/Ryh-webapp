@@ -1,0 +1,30 @@
+<mat-toolbar >
+    <mat-toolbar-row>
+      <h1>RYH</h1>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <h2>Bienvenid@</h2>
+    </mat-card-header>
+    <img mat-card-image src="../../../assets/2.png" >
+    <mat-card-content>
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Usuario</mat-label>
+              <input matInput type="text" [(ngModel)]="userData.username" name="username">
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width">
+              <mat-label>Contraseña</mat-label>
+              <input matInput type="password" [(ngModel)]="userData.password" name="password">
+            </mat-form-field>
+          </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="login()">Ingresar</button>
+    </mat-card-actions>
+  </mat-card>
+

@@ -1,0 +1,45 @@
+
+
+  <div class=add> 
+    <button class="addbtn" mat-raised-button [routerLink]="['/menu/agregar-servicio']"> Agregar servicio</button>
+  </div> 
+
+
+<mat-form-field>
+  <mat-label>Filtrar</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Juan" #input>
+</mat-form-field>
+
+<table mat-table [dataSource]="servicesInfo" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let servicesInfo"> {{servicesInfo.pk}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let servicesInfo"> {{servicesInfo.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let servicesInfo">  <button mat-raised-button class="deletebtn" (click)="deleteService(servicesInfo.pk)" > Eliminar</button> </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No se encuentra el resultado "{{input.value}}"</td>
+      </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10" [length]="servicesInfo.length" aria-label="Páginas"></mat-paginator>
+
+

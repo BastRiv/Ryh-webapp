@@ -1,0 +1,32 @@
+
+
+  <div class=add> 
+    <button mat-raised-button [routerLink]="['/menu/crear-departamento']"> Agregar departamento</button>
+  </div> 
+
+<div class="divPadre">
+    <div class="divHijo" *ngFor="let item of properties">
+        <mat-card>
+            <img mat-card-image src="{{item.image_front_page}}">
+            <mat-card-header>
+                <mat-card-title>{{item.name}}</mat-card-title>
+                <mat-card-subtitle>{{item.address}}</mat-card-subtitle>
+                <mat-card-subtitle>{{item.price | currency :'':'symbol-narrow': '3.0'}} CLP noche</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                    {{item.description}}
+                </p>
+             </mat-card-content>
+         
+                <button mat-button (click)="goEdit(item.pk)">Editar</button>
+           
+        </mat-card>
+  </div>
+</div>
+
+
+
+
+
+ 

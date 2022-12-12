@@ -1,0 +1,29 @@
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
+
+input{
+    width: 500px;
+}
+
+ 
+button.edit{
+    background-color:#2A8C4A;
+    color:#FFFFFF;
+}
+
+button.delete{
+    background-color:#ff0000;
+    color:#FFFFFF;
+}
+
+mat-form-field{
+    width: 500px;
+}
+   
+   

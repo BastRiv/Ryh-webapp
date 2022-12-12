@@ -1,0 +1,28 @@
+
+
+
+
+
+<div class="divPadre">
+    <div *ngFor="let item of properties" class="divHijo" [ngClass]="(item.status == 2)?'show': 'hide'">  
+        <mat-card  *ngIf="item.status == 2">
+            <img mat-card-image src="{{item.image_front_page}}">
+            <mat-card-header>
+                <mat-card-title>{{item.name}}</mat-card-title>
+                <mat-card-subtitle>{{item.address}}</mat-card-subtitle>
+                <mat-card-subtitle>{{item.price | currency :'':'symbol-narrow': '3.0'}} CLP noche</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                    {{item.description}}
+                </p>
+             </mat-card-content>
+           
+                <button mat-button>Check in</button>
+           
+        </mat-card>
+    </div>
+ 
+</div>
+
+ 

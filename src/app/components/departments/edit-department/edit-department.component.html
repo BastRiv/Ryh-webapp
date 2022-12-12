@@ -1,0 +1,54 @@
+<div class="form">
+    <mat-form-field appearance="fill" style="margin-top: 2%;">
+        <mat-label>Nombre</mat-label>
+        <input matInput  type="text" [(ngModel)]="userDataProperty.name">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Dirección</mat-label>
+        <input matInput type="text" [(ngModel)]="userDataProperty.address">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput  type="text"  [(ngModel)]="userDataProperty.description"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Precio por noche</mat-label>
+        <input matInput  type="number"  [(ngModel)]="userDataProperty.price">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Estado</mat-label>
+        <mat-select [(ngModel)]="userDataProperty.status">
+          <mat-option value="0">Disponible</mat-option>
+          <mat-option value="1">En espera de confirmación</mat-option>
+          <mat-option value="2">Reservado</mat-option>
+          <mat-option value="3">Ocupado</mat-option>
+          <mat-option value="4">Limpieza</mat-option>
+          <mat-option value="5">Mantención</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="imgs">
+        <h3>Agregar imagen portada</h3>
+        <input  type="file">
+      </div>
+      <div class="imgs" style="margin-top: 2%;">
+        <h3>Agregar fotos</h3>
+        <input  type="file" >
+        <input  type="file" >
+        <input  type="file" >
+        <input  type="file" >
+        <input  type="file" >
+        <input  type="file" >
+      </div>
+
+     <br><br>
+      <tr> 
+        <button mat-raised-button class="edit" (click)="updateProperty()"> Guardar</button>&nbsp;&nbsp;
+        <button mat-raised-button class="delete" (click)="openDialog()"> Eliminar</button>
+      </tr>
+</div>
+

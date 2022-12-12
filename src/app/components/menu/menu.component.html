@@ -1,0 +1,32 @@
+<mat-toolbar >
+
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+      </button>
+      <h1>RYH</h1>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side">
+      <mat-nav-list>
+        <!-- <a mat-list-item [routerLink]="['/menu/dashboard']" ><mat-icon>dashboard</mat-icon>&nbsp;&nbsp; Dashboard</a> -->
+        <a mat-list-item [routerLink]="['/menu/usuarios']" > <mat-icon>group</mat-icon>&nbsp;&nbsp; Usuarios </a>
+        <a mat-list-item [routerLink]="['/menu/departamentos']" ><mat-icon>location_city</mat-icon>&nbsp;&nbsp; Departamentos </a>
+        <a mat-list-item [routerLink]="['/menu/servicios']"><mat-icon>room_service</mat-icon>&nbsp;&nbsp; Servicios </a>
+        <a mat-list-item [routerLink]="['/menu/en-espera']"><mat-icon>domain</mat-icon>&nbsp;&nbsp; En espera </a>
+        <a mat-list-item [routerLink]="['/menu/check-in']" ><mat-icon>playlist_add_check</mat-icon>&nbsp;&nbsp; Check-In </a>
+        <a mat-list-item [routerLink]="['/menu/check-out']" ><mat-icon>reply</mat-icon>&nbsp;&nbsp; Check-Out	 </a>
+        <a mat-list-item (click)="openDialog()"><mat-icon>power_settings_new</mat-icon>&nbsp;&nbsp; Cerrar Sesión  </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 88vh;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+  
+  
+  

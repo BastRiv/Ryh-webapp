@@ -1,0 +1,66 @@
+<div class="form">
+    <mat-form-field appearance="fill" style="margin-top: 2%;">
+        <mat-label>Nombre</mat-label>
+        <input matInput  type="text" [(ngModel)]="data.name">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Dirección</mat-label>
+        <input matInput type="text" [(ngModel)]="data.address">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput  type="text"  [(ngModel)]="data.description"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Precio por noche</mat-label>
+        <input matInput  type="number"  [(ngModel)]="data.price">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Estado</mat-label>
+        <mat-select [(ngModel)]="data.status">
+          <mat-option value="0">Disponible</mat-option>
+          <mat-option value="1">En espera de confirmación</mat-option>
+          <mat-option value="2">Reservado</mat-option>
+          <mat-option value="3">Ocupado</mat-option>
+          <mat-option value="4">Limpieza</mat-option>
+          <mat-option value="5">Mantención</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <div class="services">
+      <h3>Servicios</h3>
+      <section class="checbox" *ngIf="servicesInfo">
+        <mat-checkbox class="margin" (change)="valueCheckbox($event)" value="{{servicesInfo[0].pk}}" color="primary">{{servicesInfo[0].name}}</mat-checkbox>
+        <div class="form-field">
+          <mat-form-field class ="margin" appearance="fill">
+            <input matInput type="number" placeholder="Cantidad" [(ngModel)]="quantity">
+          </mat-form-field>
+        </div>
+  
+    </section>
+    </div>
+    <br><br><br>
+
+      <div class="imgs">
+        <h3>Agregar imagen portada</h3>
+        <input  type="file" (change)="imagenFront($event)" [(ngModel)]="data.image_front_page">
+      </div>
+      <div class="imgs" style="margin-top: 2%;">
+        <h3>Agregar fotos</h3>
+        <input  type="file" (change)="imagen1($event)" [(ngModel)]="data.image_1">
+        <input  type="file" (change)="imagen2($event)" [(ngModel)]="data.image_2">
+        <input  type="file" (change)="imagen3($event)" [(ngModel)]="data.image_3">
+        <input  type="file" (change)="imagen4($event)" [(ngModel)]="data.image_4">
+        <input  type="file" (change)="imagen5($event)" [(ngModel)]="data.image_5">
+        <input  type="file" (change)="imagen6($event)" [(ngModel)]="data.image_6">
+      </div>
+
+      <div class=create> 
+        <button mat-raised-button (click)="createProperty()"> Crear</button>
+      </div> 
+</div>
+

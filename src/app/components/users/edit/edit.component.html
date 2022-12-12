@@ -1,0 +1,22 @@
+<div class="form">
+    <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput  [(ngModel)]="userDataProfile.first_name">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input matInput [(ngModel)]="userDataProfile.last_name">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Correo</mat-label>
+        <input matInput placeholder="pat@example.com" type="email"  [(ngModel)]="userDataProfile.email">
+      </mat-form-field>
+
+      <tr> 
+        <button mat-raised-button class="edit" (click)="updateUser()"> Guardar</button>&nbsp;&nbsp;
+        <button mat-raised-button class="delete" (click)="openDialog()"> Eliminar</button>
+      </tr>
+ 
+</div>

@@ -1,0 +1,62 @@
+  
+mat-card img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: auto;
+    max-width: inherit;
+    max-height: 200px;
+    min-height: 200px;
+}
+
+
+mat-card{ 
+    margin-top: 2%;
+    max-width: 300px;
+    height: 400px;
+}
+
+mat-card-content{
+    height: 55px;
+    padding-left: 5%;
+}
+
+
+.divPadre {
+    margin:2%
+}
+
+.divHijo.hide{ 
+    display: inline-block;
+}
+
+.divHijo.hide h3{ 
+    display: inline-block;
+}
+
+
+.divHijo.show{ 
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+.divHijo.show h3{ 
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+
+mat-card-actions {
+   margin-left: 25%;
+}
+
+
+button{
+    background-color:#2A8C4A;
+    color:#FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
