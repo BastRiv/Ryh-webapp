@@ -40,6 +40,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { DialogEditDepartmentComponent } from './components/departments/edit-department/dialog-edit-department/dialog-edit-department.component';
 import { CreateServicesComponent } from './components/services/create-services/create-services.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { DCheckInComponent } from './components/check-in/d-check-in/d-check-in.component';
 
 
 
@@ -68,6 +69,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ServicesComponent,
     DialogEditDepartmentComponent,
     CreateServicesComponent,
+    DCheckInComponent,
   ],
   imports: [
     BrowserModule,

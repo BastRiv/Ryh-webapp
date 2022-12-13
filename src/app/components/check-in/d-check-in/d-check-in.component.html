@@ -1,0 +1,57 @@
+
+<div class="report">
+    <h1 mat-dialog-title>Check In</h1>
+
+
+        <h2>Datos departamento</h2>
+        <div *ngIf="propertyInfo">
+            <mat-list>
+                <h3>Nombre</h3>
+                <p>{{propertyInfo.name}}</p>
+            </mat-list>
+            <mat-list>
+                <h3>Dirección</h3>
+                <p>{{propertyInfo.address}}</p>
+            </mat-list>
+            <mat-list>
+                <h3>Descripción</h3>
+                <p>{{propertyInfo.description}}</p>
+            </mat-list>
+            <mat-list>
+                <h3>Precio por noche</h3>
+                <p>{{propertyInfo.price | currency :'':'symbol-narrow': '3.0'}}</p>
+            </mat-list>
+        </div>
+
+        <h2>Datos reserva</h2>
+        <div *ngFor="let item of propertyReservation">
+            <mat-list>
+                <h3>Código</h3>
+                <p>{{item.code}}</p>
+            </mat-list>
+            <mat-list>
+                <h3>Fecha de llegada</h3>
+                <p>{{item.start_date}}</p>
+            </mat-list>
+            <mat-list>
+                <h3>Fecha de salida</h3>
+                <p>{{item.end_date}}</p>
+            </mat-list>
+            <mat-list>
+                <h3>Diferencia a pagar</h3>
+                <p>{{total | currency :'':'symbol-narrow': '3.0'}}</p>
+            </mat-list>
+        </div>
+        <div>
+        <br>
+            <h2 style="text-decoration: none !important;">Firma</h2>
+            <br>
+            <div style="border-bottom:solid black  3px; width: 20%; "></div>
+        </div>
+
+</div>
+
+<div class="footer">
+        <button mat-button mat-dialog-close>Cerrar</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="print()">Imprimir</button>
+</div>

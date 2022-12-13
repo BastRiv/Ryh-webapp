@@ -39,7 +39,9 @@ checked = false;
 indeterminate = false;
 disabled = false;
 servicePk:any;
-quantity:any;
+quantity={
+  value:""
+}
 propertyInfo:any;
 
   constructor( private directoryService: DirectoryService,
@@ -73,8 +75,9 @@ propertyInfo:any;
     let data={
       property:propertyPk,
       service: this.servicePk,
-      quantity: this.quantity
+      quantity: this.quantity["value"]
     }
+    console.log(data); 
     this.directoryService.createPropertyService(this.token, data)
     .then( data => {
       console.log(data);

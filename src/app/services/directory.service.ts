@@ -223,6 +223,22 @@ export class DirectoryService {
         });
       });
     }
+
+
+    getReservationProperty(token:any, pk:any){
+      return new Promise((resolve,reject)=>{
+        let headers = new HttpHeaders({'Content-Type':'application/json', 'Authorization': 'Token ' + token});
+    
+        this.http.get(apiUrl + 'property/reservation/?property=' + pk, {headers:headers})
+        .subscribe(res =>{
+          resolve(res);
+        }, (err)=>{
+          reject(err);
+        });
+      });
+    }
+  
+  
   
 
 

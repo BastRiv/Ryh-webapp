@@ -33,11 +33,11 @@
 
     <div class="services">
       <h3>Servicios</h3>
-      <section class="checbox" *ngIf="servicesInfo">
-        <mat-checkbox class="margin" (change)="valueCheckbox($event)" value="{{servicesInfo[0].pk}}" color="primary">{{servicesInfo[0].name}}</mat-checkbox>
+      <section class="checbox" *ngFor="let item of servicesInfo">
+        <mat-checkbox class="margin" (change)="valueCheckbox($event)" value="{{item.pk}}" color="primary">{{item.name}}</mat-checkbox>
         <div class="form-field">
           <mat-form-field class ="margin" appearance="fill">
-            <input matInput type="number" placeholder="Cantidad" [(ngModel)]="quantity">
+            <input matInput type="number" placeholder="Cantidad" [(ngModel)]="quantity.value">
           </mat-form-field>
         </div>
   

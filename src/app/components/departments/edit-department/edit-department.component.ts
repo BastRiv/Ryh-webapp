@@ -33,6 +33,8 @@ image3:any;
 image4:any;
 image5:any;
 image6:any;
+servicesInfo:any;
+services:any;
 
   constructor(private routes: Router,
     public dialog: MatDialog,
@@ -51,10 +53,22 @@ image6:any;
     }
 
   ngOnInit(): void {
+    this.getServices();
     this.getServicesProperty();
     this.getPropertyInfo();
     this.preProfile();
-   
+  
+  }
+
+  getServices() {
+    this.directoryService.getServices(this.token)
+    .then( data => {
+      this.services = data;
+      console.log('SERVICESSSS', this.services)
+    } )
+    .catch( error => {
+      console.log(error);
+    } )
   }
 
 
@@ -64,13 +78,14 @@ image6:any;
   	this.userDataProperty["address"] = this.propertyInfo.address
     this.userDataProperty["price"] = this.propertyInfo.price
     this.userDataProperty["status"] = this.propertyInfo.status
+    console.log('PREPROFILE')
 }
 
 getServicesProperty() { 
   this.directoryService.getOneServicesProperty(this.token, this.propertypk.departmentId)
   .then(data => { 
      this.serviceInfo = data;
-     console.log(this.serviceInfo);
+     console.log('SErvices property',this.serviceInfo);
    })
    .catch( error => { 
     console.log(error)
@@ -83,7 +98,7 @@ getServicesProperty() {
     .then( data => {
       this.propertyInfo = data; 
       this.preProfile();
-      console.log(this.propertyInfo)
+      console.log('propertyInfo', this.propertyInfo)
     } )
     .catch( error => {
       console.log(error);
